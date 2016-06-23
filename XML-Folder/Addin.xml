@@ -1,0 +1,81 @@
+<customUI xmlns="http://schemas.microsoft.com/office/2006/01/customui" onLoad="CallbackOnLoad">
+	<ribbon>
+		<tabs>
+			<tab id="TabGary1" label="GaryAddin Tools 1">
+				<group id="PlotTools" label="Plot Tools" visible="true" imageMso="ChartStylesGallery">
+					<button id="btnDrawPlot" label="Draw Plot Outline (Shape)" imageMso="TableBorderPenColorPicker" screentip="Create a freeform outline of the selected series" getSupertip="getSupertip" onAction="RibbonXOnAction" tag="LinePlots" visible="true"/>
+					<button id="btnShadePlot" label="Shade Plot (Shape)" imageMso="ShapeFillColorPickerClassic" screentip="Create a freeform shade of the selected series" getSupertip="getSupertip" onAction="RibbonXOnAction" tag="FillPlots" visible="true"/>
+					<button id="btnGridlines" label="Insert/Replace Gridlines (Shape)" imageMso="GridSettings" screentip="Add gridlines as a shape to the selected plot" getSupertip="getSupertip" onAction="RibbonXOnAction" tag="InsrtGridlines" visible="true"/>					
+					<button id="btnEnvTool" label="Envelope Tool" imageMso="ChartPlotArea" screentip="Use the envelope freeform tool (unfinished)" getSupertip="getSupertip" onAction="RibbonXOnAction" tag="opendialog" visible="true"/>
+					<button id="btnDataSeriesList" label="Data Series List" imageMso="ChartEditDataSource" screentip="Open a dialog to list all the data series to easily edit data series properties" getSupertip="getSupertip" onAction="RibbonXOnAction" tag="opendataseries" visible="true"/>
+				</group>
+				<group id="ShapeTools" label="Shape Tools" visible="true" imageMso="ChartStylesGallery">
+					<button id="btnShapeUnion" label="Shape Union" image="union" screentip="Create a union shape of two shapes" getSupertip="getSupertip" onAction="RibbonXOnAction" tag="shape_union" visible="true"/>
+					<button id="btnShapeSubtract" label="Shape Subtract" image="subtract" screentip="Create a subtracted shape of two shapes" getSupertip="getSupertip" onAction="RibbonXOnAction" tag="shape_subtract" visible="true"/>
+					<button id="btnShapeIntersect" label="Shape Intersect" image="intercept" screentip="Create a intersected shape of two shapes" getSupertip="getSupertip" onAction="RibbonXOnAction" tag="shape_intersect" visible="true"/>
+					<button id="btnShapeCombine" label="Shape Combine" image="combine" screentip="Create a combined shape of two shapes" getSupertip="getSupertip" onAction="RibbonXOnAction" tag="shape_combine" visible="true"/>
+				</group>
+				<group id="ObjTransp" label="Object Transparency" visible="true" imageMso="ChartStylesGallery">
+					<box id="boxTranspIncr" boxStyle="vertical">
+						<button id="btnTranspUp" label="Increase" imageMso="OutlineMoveUp" screentip="Increase the transparency of the selected objects" getSupertip="getSupertip" onAction="RibbonXOnAction" tag="Transp_Up" visible="true"/>
+						<button id="btnTranspDwn" label="Decrease" imageMso="OutlineMoveDown" screentip="Decrease the transparency of the selected objects" getSupertip="getSupertip" onAction="RibbonXOnAction" tag="Transp_Dwn" visible="true"/>
+					</box>
+					<separator id="sepTransp"/>
+					<box id="boxTranspExtreme" boxStyle="vertical">
+						<button id="btnTranspZero" label="0%" screentip="Make the selected objects transparency 0%" getSupertip="getSupertip" onAction="RibbonXOnAction" tag="Transp_Zero" visible="true"/>
+						<button id="btnTranspFull" label="100%" screentip="Make the selected objects transparency 100%" getSupertip="getSupertip" onAction="RibbonXOnAction" tag="Transp_One" visible="true"/>
+					</box>
+				</group>
+
+				<group id="ObjSize" label="Object Size" visible="true" imageMso="ChartStylesGallery">
+					<box id="boxSizeWidth" boxStyle="vertical">
+						<button id="btnWidthUp" label="Increase Width" image="horiz_widen" screentip="Increase width of the selected objects" getSupertip="getSupertip" onAction="RibbonXOnAction" tag="Width_Up" visible="true"/>
+						<button id="btnWidthDwn" label="Decrease Width" image="horiz_short" screentip="Decrease the width of the selected objects" getSupertip="getSupertip" onAction="RibbonXOnAction" tag="Width_Dwn" visible="true"/>
+					</box>
+					<separator id="sepObjSize"/>
+					<box id="boxSizeHeight" boxStyle="vertical">
+						<button id="btnHeightUp" label="Increase Height" image="vert_widen" screentip="Increase height of the selected objects" getSupertip="getSupertip" onAction="RibbonXOnAction" tag="Height_Up" visible="true"/>
+						<button id="btnHeightDwn" label="Decrease Height" image="vert_short" screentip="Decrease the height of the selected objects" getSupertip="getSupertip" onAction="RibbonXOnAction" tag="Height_Dwn" visible="true"/>
+					</box>
+				</group>
+
+				<group id="ObjPos" label="Object Position" visible="true" imageMso="ChartStylesGallery">
+					<box id="boxPosLeft" boxStyle="vertical">
+						<button id="btnPosLeft" label="Left" imageMso="ObjectNudgeLeft" screentip="Move the selected objects left" getSupertip="getSupertip" onAction="RibbonXOnAction" tag="Mv_Left" visible="true"/>
+					</box>
+					<separator id="sepPosLHS"/>
+					<box id="boxPosVert" boxStyle="vertical">
+						<button id="btnPosUp" label="Up" imageMso="ObjectNudgeUp" screentip="Move the selected objects up" getSupertip="getSupertip" onAction="RibbonXOnAction" tag="Mv_Up" visible="true"/>
+						<button id="btnPosDwn" label="Down" imageMso="ObjectNudgeDown" screentip="Move the selected objects down" getSupertip="getSupertip" onAction="RibbonXOnAction" tag="Mv_Dwn" visible="true"/>
+					</box>
+					<separator id="sepPosRHS"/>
+					<box id="boxPosRight" boxStyle="vertical">
+						<button id="btnPosRight" label="Right" imageMso="ObjectNudgeRight" screentip="Move the selected objects right" getSupertip="getSupertip" onAction="RibbonXOnAction" tag="Mv_Right" visible="true"/>
+					</box>
+				</group>
+			</tab>
+			
+			<tab id="TabGary2" label="GaryAddin Tools 2">
+				<group id="WorkSpc" label="Workspace" visible="true" imageMso="ChartStylesGallery">
+					<button id="btnWindVert" label="Align Workbooks Vertically" imageMso="ViewPageBreakPreviewView" screentip="Aligns the workspace vertically across the display" getSupertip="getSupertip" onAction="RibbonXOnAction" tag="tilevertically" visible="true"/>
+					<button id="btnWindGrid" label="Align Workbooks on Grid (On 2 Rows)" imageMso="ViewSlideSorterView" screentip="Aligns the workspace on a grid pattern (spread over two rows)" getSupertip="getSupertip" onAction="RibbonXOnAction" tag="tileacross" visible="true"/>
+					<button id="btnWindExpand" label="Expand Workspace Across All Monitors" imageMso="ZoomFitToWindow" screentip="Expands the entire excel workspace across the length of all the monitors" getSupertip="getSupertip" onAction="RibbonXOnAction" tag="expandacrossscreens" visible="true"/>
+				</group>
+				<group id="MiscTasks" label="Misc. Tasks" visible="true" imageMso="ChartStylesGallery">
+					<checkBox id="R1C1Btn" label="R1C1 Referencing" screentip="Toggle A1 or R1C1 Cell Referencing" onAction="OnActionCallback" getPressed="CheckboxgetPressed" />
+					<checkBox id="DispFormulaBtn" label="Display Formulas" screentip="Toggle value and formula display in cells" onAction="OnActionCallback" getPressed="CheckboxgetPressed" />
+<button id="RnmTitle" label="Rename Workbook Caption" imageMso="RecordsFreezeColumns" screentip="Rename the title on the workbook for easy identification" getSupertip="getSupertip" onAction="RibbonXOnAction" tag="RenameTitle" visible="true"/>
+<button id="RnmApp" label="Rename Application Caption" imageMso="RecordsFreezeColumns" screentip="Rename the title on the application" getSupertip="getSupertip" onAction="RibbonXOnAction" tag="RenameApplication" visible="true"/>
+<button id="btnInterpXY" label="Interp. a Point from XY List" imageMso="RecordsFreezeColumns" screentip="Interpolate a point linearly between points from a list of X and Y values" getSupertip="getSupertip" onAction="RibbonXOnAction" tag="InterpBtPts" visible="true"/>
+					<button id="btnCopyAddress" label="Copy Cell Address" imageMso="Copy" screentip="Copies the absolute cell address of the cell range selected" getSupertip="getSupertip" onAction="RibbonXOnAction" tag="CopyCellAdress" visible="true"/>
+					<button id="btnCopyFormulae" label="Copy Cell Formulae" imageMso="NameUseInFormula" screentip="Copies the formulas from all the cells selected" getSupertip="getSupertip" onAction="RibbonXOnAction" tag="CopyCellFormulas" visible="true"/>
+					<button id="btnWrkshtList" label="Worksheet List" imageMso="WindowsCascade" screentip="Open a dialog to list all the Worksheets to jump between" getSupertip="getSupertip" onAction="RibbonXOnAction" tag="worksheetlist" visible="true"/>
+					<button id="btnChartList" label="Chart List" imageMso="SlideMasterChartPlaceholderInsert" screentip="Open a dialog to list all the Chart Sheets to jump between" getSupertip="getSupertip" onAction="RibbonXOnAction" tag="chartlist" visible="true"/>
+					<button id="btnReopenFile" label="Reopen Current File" imageMso="RecurrenceEdit" screentip="Closes the current file, and reopens from the last saved point" getSupertip="getSupertip" onAction="RibbonXOnAction" tag="closeandreopen" visible="true"/>
+					<button id="btnToggleHardType" label="Toggle Hard Typed" imageMso="RecurrenceEdit" screentip="Toggles conditional formatting to see where a value in a cell is hard typed" getSupertip="getSupertip" onAction="RibbonXOnAction" tag="Toggle_TestHardTyped" visible="true"/>
+				</group>
+			</tab>	
+	
+		</tabs>
+	</ribbon>
+</customUI>
