@@ -1,3 +1,4 @@
+#KEYBOARD SHORTCUTS
 CopyCellFormulas
 +^C
 CopyCellAdress
@@ -18,3 +19,5 @@ Mv_Right
 +^%{RIGHT}
 worksheetlist
 +^%W
+Toggle_TestHardTyped
++^1
